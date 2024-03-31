@@ -1,0 +1,62 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Styles pour le titre principal */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les liens de connexion et de déconnexion */
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+/* Styles pour les éléments de la liste des appartements */
+.appartments-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Styles pour chaque appartement */
+.appartment {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les titres des appartements */
+.appartment h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Styles pour les images des appartements */
+.appartment img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Styles pour les descriptions des appartements */
+.appartment p {
+    margin-bottom: 5px;
+}
