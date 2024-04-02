@@ -11,13 +11,13 @@ if (isset($_SESSION['identity'])) {
     $state="login";}?>
 <?php
 if (isset($_POST['homepage'])) {
-    header('Location: /projet/PublicPage.php');
+    header('Location: PublicPage.php');
 }
 elseif (isset($_POST['dashboard'])) {
-    header('Location: /projet/dashboard.php');
+    header('Location: dashboard.php');
 }
 elseif (isset($_POST['login'])) {
-    header('Location: /projet/LoginPage.php');
+    header('Location: LoginPage.php');
 }
 elseif (isset($_POST['logout'])) {
     session_destroy();
