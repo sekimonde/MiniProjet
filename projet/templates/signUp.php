@@ -21,7 +21,7 @@ require("templates/bar.php");
 <?php ob_start(); ?>
 
 
-<form  method="post" id="form" >
+<form action="index.php?action=signup" method="post" id="form" >
   <section>
   <div class="form-box"> 
     <div class="form-value">

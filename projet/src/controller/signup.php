@@ -5,15 +5,14 @@ class signUp{
     public function execute(){
 
 
-// Inclure le fichier contenant la classe DatabaseConnection
-require_once "/xampp/htdocs/projet/src/lib/dataBase.php";
 
 // Créer une instance de la classe DatabaseConnection
 $databaseConnection = new DatabaseConnection();
 
 try {
     // Obtenir une connexion à la base de données
-    $pdo = $databaseConnection->getConnection();
+    $handleUsers=new handleUsers();
+    $handleUsers->connection=new DatabaseConnection();
     
     }
 
@@ -27,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prenom = $_POST["prenom"];
     $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $email = $_POST["email"];
-    $image = ""; // À adapter selon votre logique de gestion des fichiers
+    $image = "default.jpg"; // À adapter selon votre logique de gestion des fichiers
     $phoneNumber = $_POST["phoneNumber"];
 
     // Créer une instance de la classe DatabaseConnection
     $databaseConnection = new DatabaseConnection();
 
     // Appeler la fonction insertData() pour insérer les données
-   if ($databaseConnection->insertData($nom, $prenom, $email, $password_hash, $image, $phoneNumber)){
+   if ($handleUsers->insertData($nom, $prenom, $email, $password_hash, $image, $phoneNumber)){
     header('location: index.php?action=homepage');
    }
      
