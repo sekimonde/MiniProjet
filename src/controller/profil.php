@@ -38,7 +38,7 @@ if(isset($_POST['sendProfil'])) {
      $i=random_int(0,1000000000000000000);
         $file_ext = explode('.', $file_name);
         $file_ext = strtolower(end($file_ext));
-        $file_name=('image'.$i.'.'.$file_ext);
+        $file_name=('image'.$i.$idUser.'.'.$file_ext);
         $target_dir ="picture/image/$file_name";
       
     

@@ -1,5 +1,6 @@
 <?php
 require_once('src/model/post.php');
+require_once('src/model/user.php');
 class addPost{
    
 
@@ -13,15 +14,20 @@ class addPost{
 require("templates/bar.php");
 $title="addPost";
 $content="";
-
-
+$handleUsers=new handleUsers();
+$handleUsers->connection=new DatabaseConnection();
+$idUser=$_SESSION['identity'];
+$user=$handleUsers->getUser1($idUser);
+if($user->canPost==0){
+  throw new Exception('you are banned from posting');
+}
 
         $name = $price = $body = '';
         $nameErr = $priceErr = $bodyErr = '';
        
         $handlePosts=new handlePosts();
         $handlePosts->connection=new DatabaseConnection();
-      $idUser=$_SESSION['identity'];
+     
         
 
 

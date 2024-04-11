@@ -17,7 +17,8 @@ class dashboardAdmin{
  $script="";
  $handleAdmins=new handleAdmins();
         $handleAdmins->connection=new DatabaseConnection();
- $admin=$handleAdmins->getadmin($_SESSION['id']);
+        $id=$_SESSION['id'];
+ $admin=$handleAdmins->getadmin($id);
         $handleUsers=new handleUsers();
         $handleUsers->connection=new DatabaseConnection();
         $handlePosts=new handlePosts();
@@ -38,6 +39,10 @@ class dashboardAdmin{
             unlink("picture/app/$post->picture");
         }
         $_SESSION['identity']=-1;
+        session_destroy();
+        session_start();
+        $_SESSION['id']=$id;
+
             header('Location: admin.php?action=users');
     }}
     foreach($unbannedusers as $user){
@@ -57,6 +62,9 @@ class dashboardAdmin{
             unlink("picture/app/$post->picture");
         }
         $_SESSION['identity']=-1;
+        session_destroy();
+        session_start();
+        $_SESSION['id']=$id;
             header('Location: admin.php?action=users');
     }}
         require('templates/dashboardAdmin.php');
