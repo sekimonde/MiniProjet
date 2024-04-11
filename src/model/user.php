@@ -48,25 +48,32 @@ public function getUser(string $email): user{
     }
    }
    public function getUser1(string $id): user{
-    $pdo=$this->connection->getConnection();
-    $sql = 'SELECT * FROM users WHERE id =?' ;
-    $stmt = $pdo->prepare($sql);
-     $stmt->execute([$id]);
-    $row = $stmt->fetch();
-    $user=new user();
-    $user->id=$row->id;
-    $user->nom=$row->nom;
-    $user->prenom=$row->prenom;
-    $user->email=$row->email;
-    $user->image=$row->image;
-    $user->phoneNumber=$row->phoneNumber;
-    $user->email=$row->email;
-    $user->password=$row->password;
-    $user->canPost=$row->canPost;
-    return $user;
+    try{$pdo=$this->connection->getConnection();
+        $sql = 'SELECT * FROM users WHERE id =?' ;
+        $stmt = $pdo->prepare($sql);
+         $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        $user=new user();
+        $user->id=$row->id;
+        $user->nom=$row->nom;
+        $user->prenom=$row->prenom;
+        $user->email=$row->email;
+        $user->image=$row->image;
+        $user->phoneNumber=$row->phoneNumber;
+        $user->email=$row->email;
+        $user->password=$row->password;
+        $user->canPost=$row->canPost;
+        return $user;}
+        catch(PDOException $e){
+            throw new Exception("Erreur lors de la recherche des utilisateurs: " . $e->getMessage());}
+         
+    
+    
+    
    }    
 
 public function getUsers(string $canPost): array{
+    try{
     $pdo=$this->connection->getConnection();
     $sql = 'SELECT * FROM users WHERE canPost=?';
     $stmt = $pdo->prepare($sql);
@@ -85,8 +92,10 @@ foreach($rows as $row){
     $user->canPost=$row->canPost;
     $users[]=$user;
 }
-    return $users;
-     } 
+    return $users;}
+    catch(PDOException $e){
+        throw new Exception("Erreur lors de la recherche des utilisateurs: " . $e->getMessage());
+     } }
      
      
 
@@ -120,10 +129,10 @@ foreach($rows as $row){
          } catch (PDOException $e) {
              if ($e->errorInfo[1] == 1062) {
                  // Duplicate entry error code (1062)
-                 echo "L'email ou numero de telephone est déjà utilisé.";
+                 throw new Exception("L'email ou numero de telephone est déjà utilisé.");
              } else {
                  // Other database error
-                 echo "Erreur lors de l'insertion des données: " . $e->getMessage();
+                 throw new Exception( "Erreur lors de l'insertion des données: " . $e->getMessage());
              }
          }
      }
@@ -146,8 +155,7 @@ foreach($rows as $row){
          }
      
      } catch (PDOException $e) {
-         echo "Erreur lors de la recherche de l'utilisateur: " . $e->getMessage();
-         return false; // En cas d'erreur, retourne false
+         throw new Exception("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
      }
      }
      

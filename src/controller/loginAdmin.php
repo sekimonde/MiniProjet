@@ -5,6 +5,7 @@ class loginAdmin{
 
     public function execute(){
         $bar="";
+        $forget="";
         if(!isset($_SESSION)){
             session_start();
         }

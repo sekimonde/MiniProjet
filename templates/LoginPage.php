@@ -23,17 +23,19 @@ if(isset($bar)&&($bar)==""){}else{
                         <input type="password" name="password" />
                         <label >Password</label>
                     </div>
+                    <?php if(isset($forget)&&($forget== "")){}else{?>
                     <div class="forget">
                         <label >
                   <a href="index.php?action=code" id="1">I forgot the password</a></label
                 >
-              </div>
+              </div><?php }?>
              <button type="submit" name="Login"> Login</button>
+             <?php if(isset($forget)&&($forget== "")){}else{?>
               <div class="register">
                 <p>
                   If you don't have account  <a id="1" href="index.php?action=signup">Sign Up</a>
                 </p>
-              </div>
+              </div><?php }?>
             </form>
           </div>
         </div>

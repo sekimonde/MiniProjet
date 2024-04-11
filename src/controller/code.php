@@ -6,6 +6,8 @@ use Symfony\Component\Mime\Email;
 require_once("vendor/autoload.php");
 class Code{
     public function execute(){
+        if(!isset($_SESSION)){
+            session_start();}
         $message="";
         if (isset($_POST['sendlink'])) {
             $email=$_POST["email"];
@@ -15,7 +17,8 @@ class Code{
         $user=$handleUsers->getUser($email);
         $code=random_int(0,1000000000000000000);
             $_SESSION['code'] = $code;
-            $html='<a href="http://localhost/projet/index.php?action=resetPassword">reset password</a>';
+            $_SESSION ['email']=$email;
+            $html='<a href="http://localhost/projet/index.php?action='.$code.'"'.'>reset password</a>';
 
             $transport = (new EsmtpTransport('live.smtp.mailtrap.io','587',false))
 ->setUsername('api')
