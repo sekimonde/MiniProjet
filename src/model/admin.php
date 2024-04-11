@@ -16,6 +16,7 @@ public string $image;
 class handleAdmins{
     public DatabaseConnection $connection;
 public function getadmin(string $id): admin{
+    try{
     $pdo=$this->connection->getConnection();
     $sql = 'SELECT * FROM admins WHERE id =?' ;
     $stmt = $pdo->prepare($sql);
@@ -29,7 +30,9 @@ public function getadmin(string $id): admin{
     $admin->image=$row->image;
     $admin->password=$row->password;
 
-    return $admin;
+    return $admin;}
+    catch(PDOException $e){
+        throw new Exception("Erreur lors de la recherche de l'utilisateur: ".$e->getMessage() );}
    } 
 
    public function login($email, $password)
@@ -51,8 +54,8 @@ public function getadmin(string $id): admin{
        }
    
    } catch (PDOException $e) {
-       echo "Erreur lors de la recherche de l'utilisateur: " . $e->getMessage();
-       return false; // En cas d'erreur, retourne false
+       throw new Exception("Erreur lors de la recherche de l'utilisateur: ".$e->getMessage());
+        // En cas d'erreur, retourne false
    }
    }
    

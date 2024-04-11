@@ -7,13 +7,13 @@ try{
     if(!isset($_SESSION)){
         session_start();
     }
-    $id = null;
+    $id = -1;
     
     if (isset($_SESSION['id'])) {
         $id = $_SESSION['id'];}
 
 if(isset($_GET['action'] )&& $_GET["action"]!=''){
-    if($_GET["action"]=='users'&& $id!=null){
+    if($_GET["action"]=='users'&& $id!=-1){
         (new dashboardAdmin())->execute();
 
     }

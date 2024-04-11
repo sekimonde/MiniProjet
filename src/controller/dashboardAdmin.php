@@ -32,6 +32,12 @@ class dashboardAdmin{
         }
     elseif (isset($_POST["delete".$user->id])){
         $handleUsers->deleteUser($user->id);
+        $posts=$handlePosts->getPosts($user->id);
+        foreach($posts as $post){
+            $handlePosts->deletePost($post->id);
+            unlink("picture/app/$post->picture");
+        }
+        $_SESSION['identity']=-1;
             header('Location: admin.php?action=users');
     }}
     foreach($unbannedusers as $user){
@@ -41,6 +47,16 @@ class dashboardAdmin{
         }
     elseif (isset($_POST["delete".$user->id])){
         $handleUsers->deleteUser($user->id);
+        if($user->image!='default.jpg'){
+            unlink("picture/image/$user->image");
+        }
+
+        $posts=$handlePosts->getPosts($user->id);
+        foreach($posts as $post){
+            $handlePosts->deletePost($post->id);
+            unlink("picture/app/$post->picture");
+        }
+        $_SESSION['identity']=-1;
             header('Location: admin.php?action=users');
     }}
         require('templates/dashboardAdmin.php');

@@ -64,7 +64,7 @@ public function getUser(string $email): user{
         $user->password=$row->password;
         $user->canPost=$row->canPost;
         return $user;}
-        catch(PDOException $e){
+        catch(Exception $e){
             throw new Exception("Erreur lors de la recherche des utilisateurs: " . $e->getMessage());}
          
     
@@ -163,16 +163,39 @@ foreach($rows as $row){
 
 
      public function updateCanPost(string $id,string $canPost){
+        try {
         $pdo=$this->connection->getConnection();
         $sql = 'UPDATE users SET canPost = :canPost WHERE id = :id';
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['canPost'=>$canPost,'id'=>$id]);
+        $stmt->execute(['canPost'=>$canPost,'id'=>$id]);}
+        catch (PDOException $e) {
+            throw new Exception("Erreur : " . $e->getMessage());}
+
      }
      public function deleteUser(string $id){
+        try{
         $pdo=$this->connection->getConnection();
     $sql='DELETE FROM users WHERE id = :id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id'=>$id]);
      }
+    catch (PDOException $e) {
+        throw new Exception("Erreur lors de la suppression de l'utilisateur: " . $e->getMessage());
+
+    }
+    }
+    public function updatePicture(string $id,string $image){
+        try{
+            $pdo=$this->connection->getConnection();
+            $sql = 'UPDATE users SET image = :image WHERE id = :id';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['image'=>$image,'id'=>$id]);}
+        
+        catch (PDOException $e) {
+            throw new Exception("Erreur lors de la modification de l'image de profil: " . $e->getMessage());
+    
+        }
     }
 
+
+}
