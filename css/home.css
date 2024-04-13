@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin:0;
+  }
+body {
+
+    background-image: linear-gradient(to right,rgba(101, 33, 33, 0.408) 30%,rgba(101, 33, 33, 0.26)),url(../picture/backgrounds/shop.jpg);
+    background-position: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+}
+.submit{
+    color : rgb(255, 242, 242) !important;
+    font-size: 20px;
+    font-weight: 700;
+    font-display:  inline-block;
+    background-color: transparent !important;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+.submit:hover{ 
+    color : rgb(158, 39, 39) !important;
+   
+}
+.container{
+
+    background-image :
+    linear-gradient(to right rgba(255, 0, 0, 0.145) 30%,rgba(0, 0, 255, 0.205)),
+    url(../picture/backgrounds/shop.jpg);
+    width: 90%;
+    height: 200px;
+}
+
+header {
+    display: flex !important;
+    justify-content: space-between;
+    padding-top: 20px;
+
+
+
+}
+.logo{
+    font-size: 30px;
+    
+    text-decoration: none;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+}
+main {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(10px) ;
+    width: 1000px;
+    border:2px solid;
+    border-radius: 10px;
+    border-color: rgba(255, 48, 113, 0.736);
+
+}
+
+
+
+.row2{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 370px;
+    height: 450px;
+}
+h2 {
+    color : rgb(255, 255, 255);
+    font-size: 50px;
+}
+h3 {
+    color : white;
+    font-size: 30px;
+    padding-top: 30px; 
+}
+h4{
+    font-size: 23px;
+    color: white;
+    font-weight: 600;
+}
+.title{
+    width: 410px;
+    height: 75px;
+    text-align: center;
+    padding-left: 50px;
+}
+.description{
+    width: 410px;
+    height: auto;
+    text-align: center;
+    padding-left: 50px;
+    
+}
+.description p{
+    color :white;
+    font-size: 15px;
+    padding-bottom: 20px;
+    
+}
+.price{
+    background: linear-gradient(rgb(248, 76, 76),rgb(32, 32, 137));
+    color: white;
+    border: 2px solid ;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    padding-top: 10px;
+    
+
+}
+
+img{
+    opacity: 0.9;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    
+}
+img:hover {
+    transform: scaleX(-1);
+  }
+.row1{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 550px;
+    height: 450px;
+
+}
+.space{
+    width: 500px;
+    height: 30px;
+}
+

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin:0;
+  }
+body {
+
+    background-image: linear-gradient(to right,rgba(101, 33, 33, 0.408) 30%,rgba(101, 33, 33, 0.26)),url(../picture/backgrounds/shop.jpg);
+    background-position: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 500px;
+    
+    
+   
+}
+p{
+    color:white !important;
+    font-size: larger;
+}
+h1{
+    color: rgb(246, 246, 246);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.submit{
+    color : rgb(255, 242, 242) !important;
+    font-size: 20px;
+    font-weight: 700;
+    font-display:  inline-block;
+    background-color: transparent !important;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+.submit:hover{ 
+    color : rgb(158, 39, 39) !important;
+   
+}
+
+header {
+    display: flex !important;
+    justify-content: space-between;
+    padding-top: 20px;
+
+
+
+}
+.logo{
+    font-size: 30px;
+    
+    text-decoration: none;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin:0;
+  } 
+body {
+    background-image: url(../picture/backgrounds/shop.jpg);
+    background-position: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('tu_foto') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.form-box {
+    position: relative;
+    width: 500px;
+    height:900px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.05em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 90%;
+    height: 50px;
+    background: transparent ;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 60px;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.register {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register pa {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration:  underline;
+}
+.inputbox.success input {
+    border-color: #09c372;
+}
+
+.inputbox.error input {
+    border-color: #e8e3e4;
+}
+
+.inputbox.error {
+    color: #f30202;
+    font-size: .9em ;
+    height: 90px;
+}
+
+body {
+
+    background-image: linear-gradient(to right,rgba(101, 33, 33, 0.373) 30%,rgba(101, 33, 33, 0.26)),url(../picture/backgrounds/shop.jpg);
+    background-position: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+}
+.submit{
+    color : rgb(255, 242, 242) !important;
+    font-size: 20px;
+    font-weight: 700;
+    font-display:  inline-block;
+    background-color: transparent !important;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+.submit:hover{ 
+    color : rgb(15, 4, 4) !important;
+   
+}
+
+
+header {
+    display: flex !important;
+    justify-content: space-between;
+    padding-top: 20px;
+
+
+
+}
+.logo{
+    font-size: 30px;
+    
+    text-decoration: none;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin:0;
+  }
+body {
+
+    background-image: linear-gradient(to right,rgba(101, 33, 33, 0.408) 30%,rgba(101, 33, 33, 0.26)),url(../picture/backgrounds/shop.jpg);
+    background-position: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.submit{
+    color : rgb(255, 242, 242) !important;
+    font-size: 20px;
+    font-weight: 700;
+    font-display:  inline-block;
+    background-color: transparent !important;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+.submit:hover{ 
+    color : rgb(158, 39, 39) !important;
+   
+}
+
+
+    
+
+header {
+    display: flex !important;
+    justify-content: space-between;
+    padding-top: 20px;
+
+
+
+}
+.logo{
+    font-size: 30px;
+    
+    text-decoration: none;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+}
+label {
+    color: white;
+    font-size: 20px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+    margin: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
+   
+}
+.form-control{
+    background-color: rgba(255, 246, 246, 0.436);
+}
+.file {
+    color: red;
+
+}
+seki{
+    color:white
+}
