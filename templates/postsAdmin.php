@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 <?php ob_start(); ?>
     <div class="menu">
         <ul>
@@ -73,31 +67,30 @@
         </div>
    
         <table>
-            <thead>
-                <tr>
-                    <th>banned users</th>
-                    <th>unbanned users</th>
+           
+            <tbody>
+            <?php foreach($posts as $post){?>
+                <tr><form method="POST" >
+                
+                    <td> 
+        
+            <?php $user=$handleUsers->getUser1($post->idUser) ; ?>
+            <h2><?=$post->name?></h2>
+            <img src="/projet/picture/App/<?php echo $post->picture?>" alt="Appartement 1" height="300" width="500"><br>
+            <p><?=$post->description?></p><br>
+            <p>Prix: $<?=$post->price?>/mois</p><br>
+            <h2>information sur le propriétaire:</h2><br>
+            <p><?php echo $user->nom." ".$user->prenom?></p><br>
+            <p><span>Email:</span> <?=$user->email?></p><br>
+            <p><span>Phone Number:</span> <?=$user->phoneNumber?></p>
+           
+           
+           <br><button style="background-color: black;
+                     " name="delete<?=$post->id ?>" type="submit"><i class="fa-solid fa-trash"></i></button>
+        </li><?php }?> </form></td>
                     
                 </tr>
-            </thead>
-            <tbody>
-            <form method="POST" >
-            <?php $i=0;while(isset($bannedusers[$i])||isset($unbannedusers[$i])){ ?>
-            <tr><?php if(isset($bannedusers[$i])){ $user=$bannedusers[$i];?>
-                    <td><?= $user->email ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color: black; 
-                    " name="unban<?=$user->id ?>" type="submit"><i class="fa-solid fa-check"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color: black;
-                     " name="delete<?=$user->id ?>" type="submit"><i class="fa-solid fa-trash"></i></button>
-                    <?php }else{
-                        ?><td></td><?php } ?>
-
-            <?php if(isset($unbannedusers[$i])){$user=$unbannedusers[$i]; ?>         
-            <td><?= $user->email ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color: black; "
-             name="ban<?=$user->id ?>" type="submit"><i class="fa-solid fa-ban"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color: black; " 
-             name="delete<?=$user->id ?>" type="submit"><i class="fa-solid fa-trash"></i></button></td>
-            <?php }?>
-                </tr>
-            
-        <?php $i++;}?></form>
+              
                
             </tbody>
         </table>

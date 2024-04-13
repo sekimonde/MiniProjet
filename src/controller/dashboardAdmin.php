@@ -67,11 +67,27 @@ class dashboardAdmin{
         $_SESSION['id']=$id;
             header('Location: admin.php?action=users');
     }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         require('templates/dashboardAdmin.php');
 
     }
+    
 
 }
+
 
 
 
