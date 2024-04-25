@@ -18,7 +18,13 @@ class profile{
         $handlePosts=new handlePosts();
         $handlePosts->connection=new DatabaseConnection();
         $user=$handleUsers->getUser1($idUser);
-        $posts=$handlePosts->getPosts($idUser);
+        $search='';
+        if (isset($_POST['search'])) {
+          $search = $_POST['searchtext'];
+     
+
+      }
+        $posts=$handlePosts->getPosts($idUser, $search);
         foreach($posts as $post){
         if (isset($_POST[$post->id])) {
             $handlePosts->deletePost($post->id);

@@ -1,13 +1,12 @@
 <?php
 require_once('src/lib/dataBase.php');
 class post{
-public string $id;
-public string $picture;
-public string $name;
-public string $description;
-public string $price;
-public string $idUser;
-
+    public string $id; 
+    public string $description;
+    public string $price;
+    public string $idUser;
+    public string $picture;
+    public string $name;
 }
 class handlePosts{
     public DatabaseConnection $connection;
@@ -35,14 +34,20 @@ class handlePosts{
 
 
 
- public function getPosts(string $idUser='-1'):array{
+ public function getPosts(string $idUser='-1',string $search=''):array{
     try{
         $pdo=$this->connection->getConnection();
         $sql = 'SELECT * FROM posts WHERE idUser= :idUser' ;
-        if($idUser=='-1'){
+        if($idUser=='-1' && $search==''){
             $sql = 'SELECT * FROM posts';
             $stmt = $pdo->prepare($sql);
-     $stmt->execute([]);
+            $stmt->execute([]);
+        }
+        elseif($search!=''){
+            $search=strtolower("%".$search."%");
+            $sql= 'SELECT * FROM posts WHERE lower(description) LIKE ? OR lower(price) LIKE ? OR lower(name) LIKE ?';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$search,$search,$search]);
         }
         else{
         $stmt = $pdo->prepare($sql);

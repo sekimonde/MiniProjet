@@ -38,21 +38,23 @@ elseif (isset($_POST['logout'])) {
     
 }
 
+
+
 ?>
 
 <?php ob_start(); ?>
 <div class="search-container">
-
-                 <input type="text" placeholder="Search.." name="search" class="rech">
-                   <button type="submit"class="ii"><i class="fa fa-search"></i></button>
-              </div>
+<form method="POST">
+                 <input type="text" placeholder="Search.." name="searchtext" class="rech">
+                   <button type="submit" name="search"class="ii"><i class="fa fa-search"></i></button>
+              </div></form>
 
 <?php $search= ob_get_clean();?>
 
 
 <?php ob_start(); ?>
 <div class="container">
-<form method="POST" ?>
+<form method="POST" >
          
             <header>
                <a href="#" class="logo"> Ikrili </a>

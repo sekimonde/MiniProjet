@@ -14,8 +14,21 @@ $handleUsers=new handleUsers();
 $handleUsers->connection=new DatabaseConnection();
         $handlePosts=new handlePosts();
         $handlePosts->connection=new DatabaseConnection();
-        $posts=$handlePosts->getPosts();
+        $search='';
+        if (isset($_POST['search'])) {
+            $search = $_POST['searchtext'];
+       
+
+        }
+        $posts=$handlePosts->getPosts('-1',$search);
         require('templates/PublicPage.php');
+
+        
+
+
+
+
     }
+    
 
 }
