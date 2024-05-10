@@ -8,3 +8,6 @@ Adresse email simple user : mouine.lemonde@gmail.com
 password : mouine1234
 
 Ajouter un dossier picture comme dans mom branche et ajouter l'image default.jpg("le nom est important")
+
+
+lien du video: https://drive.google.com/drive/folders/1oRZhVpNn_4VMvziNbfktsfUP4lcza73Z?usp=sharing
